@@ -3,25 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="inventory.css">
+    <title>Inventory Management System</title>
 </head>
 <body>
     <header class="inventory-header">
-        <h1>Inventory System Manager</h1>
+        <h1>INVENTORY SYSTEM MANAGER</h1>
     </header>
     <section class="inventory-database-container">
+        <section class="inventory-database display">
 
-    </section>
-    <section class="inventory-form-container">
-        <form>
-            <input type="text" name="product" id="inventory-product">
-            <input type="number" name="price" id="inventory-price">
-            <input type="number" name="stock" id="inventory-stock">
-            <button type="submit" id="submit">SUBMIT</button>
-        </form>
+        </section>
+        <section class="inventory-database form">
+            <form>
+                <h1>New Inventory</h1>
+                <label for="inventory-product">Product</label>
+                <input type="text" name="product" id="inventory-product" placeholder="Product...">
+                <label for="inventory-price">Price &#8358</label>
+                <input type="number" name="price" id="inventory-price" placeholder="N0.00">
+                <label for="inventory-stock">Stock (QTY)</label>
+                <input type="number" name="stock" id="inventory-stock" placeholder="00">
+                <button type="submit" id="submit">SUBMIT</button>
+            </form>
+        </section>
     </section>
     <footer class="inventory-footer">
-
+        <h3>Group 2 All rights reserved&copy</h3>
     </footer>
     <script src="inventory.js"></script>
 </body>
