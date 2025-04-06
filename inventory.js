@@ -17,10 +17,14 @@ function addInventoryDetailsToDatabase(e){
     }
 
     if(inventoryProduct && inventoryPrice && inventoryStock){
-        inventoryDatabase[inventoryProduct] = new productDatabase(inventoryProduct, inventoryPrice, inventoryStock);
+            if (!(inventoryProduct in inventoryDatabase)) {
+                inventoryDatabase[inventoryProduct] = new productDatabase(inventoryProduct, inventoryPrice, inventoryStock);
+            }else{
+                alert('This product already exists')
+                return
+            }    
     }else{
         alert('Make sure all data is filled.');
-        console.log(inventoryDatabase)
         return
     }
 
@@ -38,11 +42,17 @@ function addInventoryDetailsToDatabase(e){
         <button class="delete ${productDisplay.id}">Delete</button>
     `;
 
+    document.getElementById('inventory-product').value = '';
+    document.getElementById('inventory-price').value = '';
+    document.getElementById('inventory-stock').value = '';
+
     let deleteButtons = productDisplay.querySelectorAll('.delete');
     deleteButtons.forEach((deleteButton) => {
         deleteButton.addEventListener('click', () => {
-            deleteButton.parentElement.remove();
-            delete inventoryDatabase[deleteButton.parentElement.id]
+            if(confirm('Are you sure you want to delete this inventry?')){
+                deleteButton.parentElement.remove();
+                delete inventoryDatabase[deleteButton.parentElement.id]
+            }
         })
     })
     
