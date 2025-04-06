@@ -76,3 +76,26 @@ input{
 .inventory-footer{
     padding: 20px;
 }
+
+.product-display{
+    color: rgb(147, 147, 190);
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+
+.delete{
+    height: 30px;
+    width: 80px;
+    font-weight: bolder;
+    border-radius: 5px;
+    border: none;
+}
+
+.delete:hover{
+    background-color: red;
+    border: none;
+    transition: .08s;
+}
