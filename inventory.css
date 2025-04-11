@@ -39,6 +39,10 @@ body{
     padding: 20px;
 }
 
+.display{
+    overflow-y: auto;
+}
+
 form{
     display: flex;
     flex-direction: column;
